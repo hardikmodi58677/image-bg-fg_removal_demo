@@ -12,8 +12,8 @@ This repository contains code for various image manipulation tasks such as:
 To get started with this project, clone the repository and install the dependencies.
 
 ```sh
-git clone https://github.com/hardikmodi58677/image-bg-fg_removal_demo.git
-cd image-bg-fg_removal_demo
+git clone https://github.com/hardikmodi58677/image-manipulation-demo.git
+cd image-manipulation-demo
 npm install
 ```
 
