@@ -8,7 +8,6 @@ This repository contains code for various image manipulation tasks such as:
 - Combining multiple images
 
 ## Getting Started
-
 To get started with this project, clone the repository and install the dependencies.
 
 ```sh
@@ -32,9 +31,8 @@ This project uses npm scripts for managing workflow. Here is a basic guide on us
 Contributions are welcome. Please open up an issue or create PR if you would like to help out.
 
 ## Note
-This project is still in development. Use it at your own risk.
+- This project is still in development. Use it at your own risk.
 
 ## License
-License
 MIT
 

@@ -6,21 +6,11 @@ const fs = require("fs")
 async function removeBg(ipFileName) {
 	try {
 		const opFileName = "output_bg_removed.png"
-		const fileBlob = await removeBackground(ipFileName,{
-      publicPath: "file://"+__dirname+"/model_files/",
-    })
+		const fileBlob = await removeBackground(ipFileName)
 		const arrayBuffer = await fileBlob.arrayBuffer()
 		fs.writeFileSync(opFileName, Buffer.from(arrayBuffer))
 
-    const opacity = 0.5
-    const image = await Jimp.read(opFileName)
-    image.opacity(opacity)
-    return new Promise((resolve,reject) => {
-      image.write(opFileName, (err) => {
-        if(err) reject(err)
-        resolve(opFileName)
-      })
-    })
+    return opFileName
     
 	} catch (err) {
 		console.error(`Something went wrong in removeBg: ${err.message}`,err)
@@ -31,13 +21,7 @@ async function removeBg(ipFileName) {
 async function removeFg(ipFileName) {
 	try {
 		let opFileName = "output_fg_removed.png"
-		const fileBlob = await removeForeground(ipFileName,{
-      publicPath: "file://"+__dirname+"/model_files/",
-      output:{
-        quality: 0.8,
-        format: "image/jpeg",
-      }
-    })
+		const fileBlob = await removeForeground(ipFileName)
 		const arrayBuffer = await fileBlob.arrayBuffer()
 		fs.writeFileSync(opFileName, Buffer.from(arrayBuffer))
 
